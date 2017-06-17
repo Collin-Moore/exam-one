@@ -11,6 +11,10 @@ import { environment } from '../environments/environment';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
+import { ListComponent } from './+list/list.component';
+import { RandomComponent } from './+random/random.component';
+import { SigninComponent } from './+signin/signin.component';
+
 import {
   MdAutocompleteModule,
   MdButtonModule,
@@ -36,6 +40,7 @@ import {
   MdToolbarModule,
   MdTooltipModule
 } from '@angular/material';
+
 
 
 export const MaterialModules = [
@@ -67,7 +72,10 @@ export const MaterialModules = [
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ListComponent,
+    RandomComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
