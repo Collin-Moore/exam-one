@@ -1,2 +1,19 @@
+<md-toolbar color="primary">
+  <span fxHide.xs>Rose Routing</span>
+  <span fxHide.xs fxFlex></span>
+  <a md-button [routerLink]="['/list']" routerLinkActive="active">
+    List
+  </a>
+  <a md-button [routerLink]="['/random']" routerLinkActive="active">
+    Random
+  </a>
+  <a md-button [routerLink]="['/signin']" routerLinkActive="active">
+    Sign In
+  </a>
+</md-toolbar>
 
-<router-outlet></router-outlet>
+<div fxLayoutAlign="center center">
+  <md-card class="container">
+    <router-outlet></router-outlet>
+  </md-card>
+</div>
