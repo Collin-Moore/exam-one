@@ -41,6 +41,7 @@ import {
   MdToolbarModule,
   MdTooltipModule
 } from '@angular/material';
+import { ReversePipe } from './reverse.pipe';
 
 
 
@@ -76,7 +77,8 @@ export const MaterialModules = [
     AppComponent,
     ListComponent,
     RandomComponent,
-    SigninComponent
+    SigninComponent,
+    ReversePipe
   ],
   imports: [
     BrowserModule,

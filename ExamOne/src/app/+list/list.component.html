@@ -1,31 +1,29 @@
 <div fxLayout="column" fxLayoutGap="20px" fxFlex="95%" fxFlexOffset="2.5%">
   <div>
-    <md-card class="container">
-      <form class="list-form" (ngSubmit)="onSubmit()" #abbreviationForm="ngForm">
+    <md-card>
+      <form (ngSubmit)="onSubmit()" #abbreviationForm="ngForm">
         <div fxLayout="column">
-          <div>
-            <md-input-container fxFlexFill class="list-full-width">
+          <md-card-content>
+            <md-input-container fxFlexFill>
               <input mdInput required type="text" placeholder="Abbreviation" name="abbreviation" [(ngModel)]="formAbbreviation.abbreviation">
             </md-input-container>
-          </div>
-          <div>
-            <md-input-container fxFlexFill class="list-full-width">
+            <md-input-container fxFlexFill>
               <input mdInput required type="text" placeholder="Full name" name="full" [(ngModel)]="formAbbreviation.full">
             </md-input-container>
-          </div>
-          <div>
-            <span fxHide.xs fxFlex></span>
+          </md-card-content>
+          <md-card-actions fxLayoutAlign="end center">
             <button md-button [disabled]="!abbreviationForm.form.valid" type="submit">Save</button>
-          </div>
+          </md-card-actions>
         </div>
       </form>
     </md-card>
   </div>
   <div>
-    <md-card>
-
+    <md-card flexLayout="row" fxLayoutAlign="none center" *ngFor="let abbreviationItem of (abbreviationStream | async) | reverse">
+      <span><b>{{abbreviationItem.abbreviation}}</b></span>
+      <span fxHide.xs fxFlex></span>
+      <span>{{abbreviationItem.full}}</span>
+      <button md-icon-button (click)="remove(abbreviationItem.$key)"><md-icon>delete</md-icon></button>
     </md-card>
-    <md-card> Salt</md-card>
-    <md-card> Paprika </md-card>
   </div>
 </div>
