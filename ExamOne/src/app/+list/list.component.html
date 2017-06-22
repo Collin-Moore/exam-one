@@ -1,3 +1,35 @@
-<p>
-  list works!
-</p>
+<div></div>
+<div fxLayout="column" fxLayoutGap="20px" fxFlexOffset="5%" fxFlex="90%">
+  <div>
+    <md-card class="container">
+      <form class="list-form" (ngSubmit)="onSubmit()" #abbreviationForm="ngForm">
+        <div fxLayout="column">
+          <div >
+            <md-input-container fxFlexFill class="list-full-width">
+              <input mdInput required type="text" placeholder="Abbreviation" name="abbreviation" [(ngModel)]="formAbbreviation.abbreviation">
+            </md-input-container>
+          </div>
+          <div >
+            <md-input-container fxFlexFill class="list-full-width">
+              <input mdInput required type="text" placeholder="Full name" name="full" [(ngModel)]="formAbbreviation.full">
+            </md-input-container>
+          </div>
+          <div >
+            <span fxHide.xs fxFlex></span>
+            <button md-button [disabled]="!abbreviationForm.form.valid" type="submit">Save</button>
+          </div>
+        </div>
+      </form>
+
+    </md-card>
+  </div>
+  <div>
+    <md-list>
+      <md-list-item>
+        <md-card> Pepper </md-card>
+      </md-list-item>
+      <md-list-item> Salt </md-list-item>
+      <md-list-item> Paprika </md-list-item>
+    </md-list>
+  </div>
+</div>
