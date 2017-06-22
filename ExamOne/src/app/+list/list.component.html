@@ -1,4 +1,4 @@
-<div fxLayout="column" fxLayoutGap="20px" fxFlex="95%" fxFlexOffset="2.5%">
+<div fxLayout="column" fxLayoutGap="20px" fxFlex.lt-md="80%" fxFlexOffset.lt-md="10%" fxFlex.md="90%" fxFlexOffset.md="5%" fxFlex.gt-md="95%" fxFlexOffset.gt-md="2.5%">
   <div>
     <md-card>
       <form (ngSubmit)="onSubmit()" #abbreviationForm="ngForm">
@@ -11,7 +11,8 @@
               <input mdInput required type="text" placeholder="Full name" name="full" [(ngModel)]="formAbbreviation.full">
             </md-input-container>
           </md-card-content>
-          <md-card-actions fxLayoutAlign="end center">
+          <md-card-actions>
+            <span fxFlex></span>
             <button md-button [disabled]="!abbreviationForm.form.valid" type="submit">Save</button>
           </md-card-actions>
         </div>
