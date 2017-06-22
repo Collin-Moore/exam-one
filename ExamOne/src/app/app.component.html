@@ -1,6 +1,6 @@
-  <div>
+  <div fxLayout="column" fxLayoutGap="25px">
     <md-toolbar color="primary">
-      <span fxHide.xs>Rose Routing</span>
+      <span fxFlex>Exam 1</span>
       <span fxHide.xs fxFlex=""></span>
       <a md-button [routerLink]="['/list']" routerLinkActive="active">
     List
@@ -12,6 +12,7 @@
     Sign In
   </a>
     </md-toolbar>
+    <router-outlet fxLayoutAlign="center center"></router-outlet>
   </div>
 
-  <router-outlet fxLayoutAlign="center center"></router-outlet>
+  
