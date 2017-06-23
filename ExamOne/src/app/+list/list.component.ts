@@ -16,7 +16,7 @@ export class ListComponent implements OnInit {
 
   readonly abbreviationPath = 'abreviations';
 
-  formAbbreviation : Abbreviation = {
+  formAbbreviation: Abbreviation = {
     'abbreviation': '',
     'full': ''
   };
@@ -25,22 +25,24 @@ export class ListComponent implements OnInit {
 
   constructor(db: AngularFireDatabase) {
     this.abbreviationStream = db.list(this.abbreviationPath);
-   }
-
-  ngOnInit(): void{
   }
 
-  ngOnDestroy(): void{
+  ngOnInit(): void {
+  }
+
+  ngOnDestroy(): void {
 
   }
 
   onSubmit(): void {
     try {
-      if (this.formAbbreviation.$key) {
-        this.abbreviationStream.update(this.formAbbreviation.$key, this.formAbbreviation);
-      } else {
-        this.abbreviationStream.push(this.formAbbreviation);
+      this.abbreviationStream.push(this.formAbbreviation);
+
+      this.formAbbreviation = {
+        'abbreviation': '',
+        'full': ''
       }
+
     } catch (e) {
       console.log('Form error:', e);
     }

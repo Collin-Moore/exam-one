@@ -5,15 +5,15 @@
         <div fxLayout="column">
           <md-card-content>
             <md-input-container fxFlexFill>
-              <input mdInput required type="text" placeholder="Abbreviation" name="abbreviation" [(ngModel)]="formAbbreviation.abbreviation">
+              <input mdInput type="text" placeholder="Abbreviation" name="abbreviation" [(ngModel)]="formAbbreviation.abbreviation">
             </md-input-container>
             <md-input-container fxFlexFill>
-              <input mdInput required type="text" placeholder="Full name" name="full" [(ngModel)]="formAbbreviation.full">
+              <input mdInput type="text" placeholder="Full name" name="full" [(ngModel)]="formAbbreviation.full">
             </md-input-container>
           </md-card-content>
           <md-card-actions>
             <span fxFlex></span>
-            <button md-button [disabled]="!abbreviationForm.form.valid" type="submit">Save</button>
+            <button md-button type="submit">Save</button>
           </md-card-actions>
         </div>
       </form>
